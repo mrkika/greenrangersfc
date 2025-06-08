@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Igbinosa Endurance | Green Rangers FC</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/images/gfc.png" alt="Green FC" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="fixtures.html">Fixtures</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+    
+
+    <main class="player-detail-page">
+      <!-- Hero Banner -->
+      <section class="player-hero">
+        <div class="container hero-content">
+          <img src="assets/images/endurance_igbinosa.jpeg" alt="Chinedu Okoro" class="player-photo" />
+          <div class="player-info">
+            <h1>Igbinosa Endurance</h1>
+            <h3>Defensive Midfielder (CDM)</h3>
+            <p>Height: 5'2" | Age: 19 | Nationality: Nigerian</p>
+          </div>
+        </div>
+      </section>
+    
+      <!-- About -->
+      <section class="player-section">
+        <div class="container">
+          <h2>About</h2>
+          <p>
+            Igbinosa Endurance is a commanding Central Defender with exceptional strength and composure. Known for his tactical awareness and
+            leadership on the field, he’s the backbone of the Green Rangers FC defense, consistently neutralizing threats and
+            organizing the backline with precision.
+          </p>
+        </div>
+      </section>
+    
+      <!-- Career History -->
+      <section class="player-section bg-dark">
+        <div class="container">
+          <h2>Career History</h2>
+          <ul class="career-list">
+            <li><strong>2022–Present:</strong> Green Rangers FC</li>
+          </ul>
+        </div>
+      </section>
+    
+    <!-- Achievements -->
+    <section class="player-section">
+        <div class="container">
+            <h2>Achievements</h2>
+            <ul class="achievements-grid">
+                <li>🏆 #1</li>
+                <li>🥇 #2</li>
+                <li>🎖 #3</li>
+                <li>💯 #4</li>
+            </ul>
+        </div>
+    </section>
+    
+      <!-- Player Stats Chart -->
+      <section class="player-section bg-dark">
+        <div class="container">
+          <h2>Performance Stats</h2>
+          <div class="chart-container">
+            <canvas id="playerBarChart"></canvas>
+          </div>
+        </div>
+      </section>
+    
+    
+
+<!-- CONTACT CTA SECTION -->
+<section class="contact-cta" id="contact">
+  <div class="container">
+    <h2>Get In Touch with Green Rangers FC</h2>
+    <p>Have a question, suggestion, or want to collaborate? Send us a quick message!</p>
+
+    <form id="whatsappForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="text" id="subject" placeholder="Subject" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send via WhatsApp</button>
+    </form>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Green Rangers FC. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><img src="assets/images/facebook.png" alt="Facebook" /></a>
+        <a href="#" aria-label="Twitter"><img src="assets/images/x.png" alt="Twitter" /></a>
+        <a href="#" aria-label="Instagram"><img src="assets/images/instagram.png" alt="Instagram" /></a>
+      </div>
+    </div>
+  </footer>
+  
+  <script defer src="scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('playerBarChart').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Reflexes', 'Handling', 'Kicking', 'Positioning', 'Dribbling', 'Leadership'],
+        datasets: [{
+          label: 'Stat Rating',
+          data: [95, 92, 88, 94, 89, 93],
+          backgroundColor: '#00ff88',
+          borderRadius: 10,
+          barThickness: 30
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            min: 0,
+            max: 100,
+            ticks: {
+              color: '#00ff88',
+              font: { size: 12 }
+            },
+            grid: {
+              color: '#222'
+            }
+          },
+          y: {
+            ticks: {
+              color: '#00ff88',
+              font: { size: 14 }
+            },
+            grid: {
+              color: '#222'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: context => `${context.raw} / 100`
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+
+</body>
+</html>
